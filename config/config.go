@@ -46,9 +46,12 @@ type BaseConfigInterface interface {
 }
 
 type APIConfig struct {
-	Schema  string `json:"schema"`
-	Address string `json:"address"`
-	Port    int    `json:"port"`
+	Schema     string `json:"schema"`
+	Address    string `json:"address"`
+	Port       int    `json:"port"`
+	TLSEnabled bool   `json:"tlsEnabled"`
+	TLSCert    string `json:"tlsCert"`
+	TLSKey     string `json:"tlsKey"`
 }
 
 func (a APIConfig) GetURL() string {
